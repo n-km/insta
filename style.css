@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+}
+.task {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.226);
+    backdrop-filter: blur(4px);
+    height: 45px;
+    padding: 5px;
+    min-width: 100%;
+    font-family: arial;
+    font-size: 20px;
+}
+.task button {
+    height: 50px;
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 0px;
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+    border-width: 0px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.task button:hover {
+    box-shadow: 0 0 3px black;
+    border-radius: 10px;
+}
+.content img {
+    max-width: 100%;
+}
+.available-pictures {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+.available-pictures img {
+    width: 100px;
+    padding: 10px;
+    border-radius: 100px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.705);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.available-pictures img:hover {
+    background-color: rgba(0, 0, 0, 0.705);
+}
+.available-pictures img:active {
+    background-color: rgba(0, 0, 0);
+}
+.fullframe img{
+    display: none;
+    min-height: 100vh;
+    max-width: 100%;
+}
