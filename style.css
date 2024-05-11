@@ -1,17 +1,19 @@
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .task {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.226);
+    background-color: rgb(233, 233, 233);
     backdrop-filter: blur(4px);
     height: 45px;
     padding: 5px;
     min-width: 100%;
     font-family: arial;
     font-size: 20px;
+    
 }
 .task button {
     height: 50px;
@@ -33,19 +35,28 @@ body {
 }
 .available-pictures {
     display: flex;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
 }
+.available-pictures a {
+    backdrop-filter: blur(10px);
+}
 .available-pictures img {
+    display: block;
     width: 100px;
-    padding: 10px;
-    border-radius: 100px;
-    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.705);
+    padding: 0px;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.2s;
+    backdrop-filter: blur(10px);
+    margin: 10px;
 }
 .available-pictures img:hover {
     background-color: rgba(0, 0, 0, 0.705);
+    transform: scale(1.2);
+    box-shadow: 0 0 5px black;
 }
 .available-pictures img:active {
     background-color: rgba(0, 0, 0);
