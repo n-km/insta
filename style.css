@@ -7,7 +7,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(37, 41, 63);
+    box-shadow: 0 0 10px black;
+    color: white;
     backdrop-filter: blur(4px);
     height: 45px;
     padding: 5px;
@@ -19,17 +21,15 @@ body {
 .task button {
     height: 50px;
     font-size: 17px;
-    background-color: rgba(255, 255, 255, 0.13);
-    border-radius: 0px;
-    border-style: double;
-    border-color: rgb(0, 0, 0);
-    border-width: 0px;
+    background-color: rgb(255, 255, 255);
+    border: none;
     cursor: pointer;
     transition: 0.2s;
 }
 .task button:hover {
     box-shadow: 0 0 3px black;
     border-radius: 0px;
+    text-decoration: underline;
 }
 .content img {
     max-width: 100%;
@@ -51,13 +51,16 @@ body {
     padding: 0px;
     border-radius: 0px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0s;
     backdrop-filter: blur(10px);
     margin: 10px;
+    filter: brightness(0.9);
 }
 .available-pictures img:hover {
     background-color: rgba(0, 0, 0, 0.705);
     transform: scale(1.2);
+    border-radius: 0px;
+    filter: brightness(1);
 }
 .available-pictures img:active {
     background-color: rgba(0, 0, 0);
@@ -66,4 +69,27 @@ body {
     display: none;
     min-height: 100vh;
     max-width: 100%;
+}
+#load-more, #load-less {
+    display: block;
+    cursor: pointer;
+    border-radius: 100px;  
+    width: 30px; 
+    margin: 30px;
+    background-color: rgb(30, 36, 66);
+    color: white;
+    font-family: arial;
+    text-align: center;
+    justify-content: center;
+}
+.lighter {
+    background-color: rgb(37, 41, 63);
+    padding: 10px;
+    border-radius: 100px;
+    width: max-content;
+    margin-left: 25px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    box-shadow: 0 0 10px black;
 }

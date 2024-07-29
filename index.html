@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,32 +7,75 @@
         <meta name="description" content="Pictures">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <style>
+            .available-pictures a {
+                display: none;
+            }
+        </style>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-           
-            <div class="content"><br><br><br><h1>Instagram</h1></div>
+        <div class="content">
+            <br><br><br>
+            <h1>Instagram</h1>
+        </div>
+        <div class="task"> komboldi <button>Bilder</button></div>
+        <h1>Bilder:</h1>
+        <div class="available-pictures">
+            <a href="pictures/italia/IMG_5203.jpg" target="_blank"><img src="pictures/italia/IMG_5203.jpg" alt=""></a>
+            <a href="pictures/italia/IMG_5327.jpg" target="_blank"><img src="pictures/italia/IMG_5327.jpg" alt="IMG_5327"></a>
+            <a href="pictures/18.07.2024/IMG_4438.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4438.jpg" alt="IMG_4438"></a>
+            <a href="pictures/18.07.2024/IMG_4394.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4394.jpg" alt="IMG_4394"></a>
+            <a href="pictures/18.07.2024/IMG_4376.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4376.jpg" alt="IMG_4376"></a>
+            <a href="pictures/18.07.2024/IMG_4266.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4266.jpg" alt="IMG_4266"></a>
+            <a href="pictures/18.07.2024/IMG_4255.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4255.jpg" alt="IMG_4255"></a>
+            <a href="pictures/29.04.2024/IMG_9675.png" target="_blank"><img src="pictures/29.04.2024/IMG_9675.png" alt="IMG_9675"></a>
+            <a href="pictures/29.04.2024/IMG_9678.png" target="_blank"><img src="pictures/29.04.2024/IMG_9678.png" alt="IMG_9678"></a>
+            <a href="pictures/29.04.2024/IMG_9683.png" target="_blank"><img src="pictures/29.04.2024/IMG_9683.png" alt="IMG_9683"></a>
+        </div>
+        <div class="lighter">
+            <button id="load-more"><p>+</p></button>
+        <button id="load-less"><p>-</p></button>
+        </div>
 
-           
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let pictures = document.querySelectorAll(".available-pictures a");
+                let loadMoreButton = document.getElementById("load-more");
+                let loadLessButton = document.getElementById("load-less");
+                let currentIndex = 0;
+                const increment = 4;
 
+                function showMorePictures() {
+                    for (let i = 0; i < increment; i++) {
+                        if (currentIndex < pictures.length) {
+                            pictures[currentIndex].style.display = "table";
+                            currentIndex++;
+                        }
+                    }
+                    updateButtons();
+                }
 
+                function showLessPictures() {
+                    for (let i = 0; i < increment; i++) {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            pictures[currentIndex].style.display = "none";
+                        }
+                    }
+                    updateButtons();
+                }
 
-            <div class="task"> komboldi <button>Pictures</button></div>
-            <h1>Pictures:</h1>
-            
-            <div class="available-pictures">
-                <a href="pictures/18.07.2024/IMG_4438.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4438.jpg" alt=""></a>
-                <a href="pictures/18.07.2024/IMG_4394.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4394.jpg" alt=""></a>
-                <a href="pictures/18.07.2024/IMG_4376.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4376.jpg" alt=""></a>
-                <a href="pictures/18.07.2024/IMG_4266.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4266.jpg" alt=""></a>
-                <a href="pictures/18.07.2024/IMG_4255.jpg" target="_blank"><img src="pictures/18.07.2024/IMG_4255.jpg" alt=""></a>
-                <a href="pictures/29.04.2024/IMG_9675.png" target="_blank"><img src="pictures/29.04.2024/IMG_9675.png" alt=""></a>
-                <a href="pictures/29.04.2024/IMG_9678.png" target="_blank"><img src="pictures/29.04.2024/IMG_9678.png" alt=""></a>
-                <a href="pictures/29.04.2024/IMG_9683.png" target="_blank"><img src="pictures/29.04.2024/IMG_9683.png" alt=""></a>
-            </div>
-            
+                function updateButtons() {
+                    loadMoreButton.style.display = currentIndex < pictures.length ? "table" : "none";
+                    loadLessButton.style.display = currentIndex > 0 ? "table" : "none";
+                }
+
+                loadMoreButton.addEventListener("click", showMorePictures);
+                loadLessButton.addEventListener("click", showLessPictures);
+
+                // Show initial set of pictures
+                showMorePictures();
+            });
+        </script>
     </body>
 </html>
