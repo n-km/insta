@@ -14,7 +14,7 @@ body {
     height: 45px;
     padding: 5px;
     min-width: 100%;
-    font-family: arial;
+    font-family: "Playwrite CU";
     font-size: 20px;
     
 }
@@ -33,6 +33,15 @@ body {
 }
 .content img {
     max-width: 100%;
+}
+.content h1 {
+    font-family: "Playwrite CU";
+    padding: 10px;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 5px;
+    text-decoration: underline;
+    display: inline-block;
 }
 .available-pictures {
     display: table;
@@ -54,13 +63,11 @@ body {
     transition: 0s;
     backdrop-filter: blur(10px);
     margin: 10px;
-    filter: brightness(0.9);
 }
 .available-pictures img:hover {
     background-color: rgba(0, 0, 0, 0.705);
     transform: scale(1.2);
     border-radius: 0px;
-    filter: brightness(1);
 }
 .available-pictures img:active {
     background-color: rgba(0, 0, 0);
@@ -74,8 +81,8 @@ body {
     display: block;
     cursor: pointer;
     border-radius: 0px;   
-    margin: 15px;
-    width: 100px;
+    margin: 0px;
+    width: 100%;
     background-color: rgb(54, 60, 92);
     color: white;
     font-family: arial;
@@ -85,14 +92,16 @@ body {
 }
 #load-more:hover, #load-less:hover {
     background-color: rgb(139, 153, 236);
-    box-shadow: 0 0 15px white;
+}
+#load-more:hover {
+    color: greenyellow;
 }
 .lighter {
     background-color: rgb(37, 41, 63);
-    padding: 5px;
+    padding: 0px;
     border-radius: 5px;
-    width: max-content;
-    margin-left: 25px;
+    width: 100%;
+    margin-left: 0px;
     bottom: 5px;
     right: 5px;
     box-shadow: 0 0 10px black;
@@ -118,4 +127,39 @@ body {
         width: 100%;
         margin: 0;
     }
+    
 }
+    .socialmedia {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.616);
+        justify-content: center;
+        text-align: center;
+    }
+    .accounts {
+        display: flex;
+        justify-content: center;
+        -ms-flex-align: center;
+        margin-top: 20px;
+    }
+    .accounts button {
+        margin: 5px;
+        padding: 3px;
+        width: 150px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+    }
+    .accounts button:hover {
+        background-color: black;
+        color: white;
+    }
+    .accounts img {
+        height: 30px;
+    }
