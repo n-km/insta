@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
+    background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.designtrends.com%2Fwp-content%2Fuploads%2F2016%2F03%2F29115235%2FAbstract-Plain-White-Wallpaper-.jpg&f=1&nofb=1&ipt=6bee762ea84fff60c2359b961c35deca43ec9316cd9dfc1c10ff7d83169ea576&ipo=images);
 }
 .task {
     position: fixed;
@@ -45,10 +46,14 @@ body {
 }
 .available-pictures {
     display: table;
-    background-color: rgb(233, 233, 233);
+    background-color: rgba(206, 206, 206, 0.158);
+    backdrop-filter: blur(4px);
     border-radius: 0px;
     margin: 10px;
     padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px white;
+    max-width: 100%;
 }
 .available-pictures a {
     backdrop-filter: blur(10px);
@@ -63,11 +68,13 @@ body {
     transition: 0s;
     backdrop-filter: blur(10px);
     margin: 10px;
+    cursor: zoom-in;
 }
 .available-pictures img:hover {
     background-color: rgba(0, 0, 0, 0.705);
     transform: scale(1.2);
-    border-radius: 0px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgb(139, 153, 236);
 }
 .available-pictures img:active {
     background-color: rgba(0, 0, 0);
@@ -127,6 +134,9 @@ body {
         width: 100%;
         margin: 0;
     }
+    .flex {
+        display: block;
+    }
     
 }
     .socialmedia {
@@ -162,4 +172,10 @@ body {
     }
     .accounts img {
         height: 30px;
+    }
+    .block {
+        display: block;
+    }
+    .flex {
+        display: block;
     }
