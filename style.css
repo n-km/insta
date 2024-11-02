@@ -63,7 +63,7 @@ body {
 }
 .available-pictures img {
     display: flex;
-    width: 100px;
+    width: 130px;
     padding: 0px;
     border-radius: 0px;
     cursor: pointer;
@@ -217,3 +217,20 @@ body {
     .summary i {
         font-size: 8px;
     }
+    .info-btn {
+        position: relative;
+      }
+      
+      .info-btn:hover::after {
+        position: absolute;
+        content: attr(data-tooltip);
+        bottom: 0em;
+        right: 3em;
+        background-color: #333;
+        color: white;
+        text-shadow: none;
+        padding: .25em .5em;
+        font-family: cursive;
+        box-shadow: 0 0 10px black;
+        border-radius: 15px 15px 0px 15px;
+      }
