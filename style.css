@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.designtrends.com%2Fwp-content%2Fuploads%2F2016%2F03%2F29115235%2FAbstract-Plain-White-Wallpaper-.jpg&f=1&nofb=1&ipt=6bee762ea84fff60c2359b961c35deca43ec9316cd9dfc1c10ff7d83169ea576&ipo=images);
 }
 .task {
     position: fixed;
@@ -53,7 +52,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 3px white;
-    max-width: 90%;
+    max-width: 100%;
     height: max-content;
     overflow-x: auto;
     overflow-y: auto;
@@ -79,7 +78,7 @@ body {
     background-color: rgba(0, 0, 0, 0.705);
     transform: scale(1.2);
     border-radius: 3px;
-    border: 2px inset black;
+    border: 2px double rgb(255, 255, 255);
 }
 .available-pictures img:active {
     background-color: rgba(0, 0, 0);
@@ -125,10 +124,16 @@ body {
         width: 100%;
         margin: 0;
         padding: 0;
+        display: table;
     }
     .available-pictures img {
         width: 100%;
         margin: 0;
+        border: 0px inset transparent;
+        box-shadow: 0 0 0px rgb(126, 126, 126);
+    }
+    .available-pictures img:hover {
+        border: opx inset transparent;
     }
     .lighter {
         width: 100%;
@@ -183,4 +188,32 @@ body {
     }
     .flex {
         display: block;
+    }
+    summary {
+        margin: 10px;
+        padding: 5px;
+        background-color:rgba(240, 240, 240, 0);
+        border-radius: 10px;
+        border: 3px double black;
+        font-family: "Playwrite CU";
+    }
+    summary:hover {
+        box-shadow: 0 0 10px rgb(82, 82, 82);
+        background-color: white;
+    }
+    .summary button {
+        border: none;
+        margin: 3px;
+        float: right;
+        font-family: "Playwrite CU";
+        background-color: transparent;
+        font-weight: 900;
+        color: black;
+        text-shadow: 0 0 20px rgb(51, 255, 0);
+    }
+    .summary button:hover {
+        text-decoration: underline;
+    }
+    .summary i {
+        font-size: 8px;
     }
