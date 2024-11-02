@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>komboldi - insta</title>
+    <title>komboldi - insta - Bilder Kaufen</title>
     <meta name="description" content="Pictures">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -13,9 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
     <style>
-        .available-pictures a {
-            display: none;
-        }
+        
         .modal {
             display: none; 
             position: fixed; 
@@ -73,7 +71,7 @@
        <div class="flex">
         <div class="block">
             <div class="available-pictures">
-                <a href="pictures/04.08.2024/IMG_4582.jpg"><img src="pictures_template/04.08.2024/IMG_4582.jpg" alt=""></a>
+                <a href="mailto:xeviva.info@gmail.com?subject=Kaufantrag&amp;body=IMG_4582 | 4,99€ | %0D%0A%0D%0AArtikelbeschreibung | [Zitronen im Regen] | %0D%0A%0D%0A..."><img src="pictures_template/04.08.2024/IMG_4582.jpg" alt=""></a>
                 <a href="pictures/04.08.2024/IMG_4577.jpg"><img src="pictures_template/04.08.2024/IMG_4577.jpg" alt=""></a>
                 <a href="pictures/04.08.2024/IMG_4576.jpg"><img src="pictures_template/04.08.2024/IMG_4576.jpg" alt=""></a>
                 <a href="pictures/italia/IMG_6118.jpg" ><img src="pictures_template/italia/IMG_6118.jpg" alt=""></a>
@@ -91,10 +89,7 @@
                 <a href="pictures/29.04.2024/IMG_9678.png" target="_blank"><img src="pictures_template/29.04.2024/IMG_9678.jpg" alt="IMG_9678"></a>
                 <a href="pictures/29.04.2024/IMG_9683.png" target="_blank"><img src="pictures_template/29.04.2024/IMG_9683.jpg" alt="IMG_9683"></a>
                 <a href="pictures/ente2.JPG"><img src="pictures_template/ente2.jpg" alt=""></a>
-                <div class="lighter">
-                    <button id="load-less"><b style="font-size: 18px;">-</b><br><i>( ↑ Weniger Anzeigen ↑ )</i></button>
-                    <button id="load-more"><b style="font-size: 18px;">+</b><br><i>( ↓ Mehr Anzeigen ↓ )</i></button>
-                </div>
+                
             </div>
            </div>
            <div class="block">
@@ -125,66 +120,7 @@
         <img class="modal-content" id="img01">
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let pictures = document.querySelectorAll(".available-pictures a");
-            let loadMoreButton = document.getElementById("load-more");
-            let loadLessButton = document.getElementById("load-less");
-            let currentIndex = 0;
-            const increment = 4;
-
-            function showMorePictures() {
-                for (let i = 0; i < increment; i++) {
-                    if (currentIndex < pictures.length) {
-                        pictures[currentIndex].style.display = "table";
-                        currentIndex++;
-                    }
-                }
-                updateButtons();
-            }
-
-            function showLessPictures() {
-                for (let i = 0; i < increment; i++) {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        pictures[currentIndex].style.display = "none";
-                    }
-                }
-                updateButtons();
-            }
-
-            function updateButtons() {
-                loadMoreButton.style.display = currentIndex < pictures.length ? "table" : "none";
-                loadLessButton.style.display = currentIndex > 0 ? "table" : "none";
-            }
-
-            loadMoreButton.addEventListener("click", showMorePictures);
-            loadLessButton.addEventListener("click", showLessPictures);
-
-            // Show initial set of pictures
-            showMorePictures();
-
-            // Modal functionality
-            let modal = document.getElementById("myModal");
-            let modalImg = document.getElementById("img01");
-            let span = document.getElementsByClassName("close")[0];
-
-            pictures.forEach(picture => {
-                picture.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    modal.style.display = "block";
-                    modalImg.src = this.href;
-                });
-            });
-
-            span.onclick = function() { 
-                modal.style.display = "none";
-            }
-
-            modal.onclick = function() { 
-                modal.style.display = "none";
-            }
-        });
+    
     </script>
 </body>
 </html>
