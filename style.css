@@ -147,6 +147,9 @@ body {
     .flex {
         display: block;
     }
+    summary i {
+        display: none;
+    }
     
 }
     .socialmedia {
@@ -209,10 +212,11 @@ body {
         background-color: transparent;
         font-weight: 900;
         color: black;
-        text-shadow: 0 0 20px rgb(51, 255, 0);
+        transition: 0.2s;
     }
     .summary button:hover {
         text-decoration: underline;
+        text-shadow: 0 0 20px rgb(51, 255, 0);
     }
     .summary i {
         font-size: 8px;

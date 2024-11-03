@@ -57,3 +57,35 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const summaries = document.querySelectorAll("details > summary");
+
+    summaries.forEach(summary => {
+        summary.addEventListener("click", () => {
+            const availablePictures = summary.parentElement.querySelector(".available-pictures");
+
+            if (availablePictures) {
+                const images = availablePictures.querySelectorAll("a img");
+                
+                // Wenn geöffnet, füge Fade-In-Effekt zu den Bildern hinzu
+                if (summary.parentElement.open) {
+                    images.forEach((img, index) => {
+                        img.style.opacity = 0;
+                        img.style.transition = "opacity 0.5s ease";
+                        setTimeout(() => {
+                            img.style.opacity = 1;
+                        }, index * 200);  // Erhöht die Verzögerung für jedes Bild
+                    });
+                } else {
+                    // Bilder ausblenden, wenn "details" geschlossen wird
+                    images.forEach((img) => {
+                        img.style.opacity = 0;
+                    });
+                }
+            }
+        });
+    });
+});
