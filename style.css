@@ -326,7 +326,7 @@ body {
         background-repeat: no-repeat;
         filter: brightness(70%);
       }
-      .birddex_entry_bird:hover {
+      .birddex_entry_bird:hover, .birddex_entry_bird:active {
         filter: brightness(110%);
         border-color: white;
       }
