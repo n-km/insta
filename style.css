@@ -247,3 +247,92 @@ body {
         box-shadow: 0 0 10px black;
         border-radius: 15px 15px 0px 15px;
       }
+
+
+
+      .birddex_open {
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+      }
+      .birddex_open button {
+        background-color: transparent;
+        backdrop-filter: blur(8px);
+        border-radius: 10px;
+        border-style: solid;
+        border-color: white;
+        padding: 5px;
+        color: white;
+        font-family: "Playwrite CU";
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .birddex_open button:hover {
+        text-decoration: underline;
+      }
+      .birddex_close {
+        position: fixed;
+        top: 5px;
+        right: 20px;
+      }
+      .birddex_close button {
+        background-color: transparent;
+        backdrop-filter: blur(8px);
+        border-radius: 10px;
+        border-style: solid;
+        border-color: white;
+        padding: 5px;
+        color: white;
+        font-family: "Playwrite CU";
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .birddex_close button:hover {
+        text-decoration: underline;
+      }
+      .birddex {
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 0px;
+        height: 80vh;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.288);
+        backdrop-filter: blur(8px);
+        color: white;
+        border-width: 2px;
+        border-color: white;
+        border-style: solid;
+        border-radius: 0px 4px 4px 0px;
+      }
+      .birddex_entry_box {
+        display: block;
+        overflow-y: scroll;
+        width: 100%;
+        height: 80vh;
+      }
+      .birddex_entry_bird {
+        margin-top: 2px;
+        height: 170px;
+        width: 100%;
+        justify-content: center;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgba(250, 250, 250, 0.292);
+        border-radius: 7px;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 1px rgb(0, 0, 0);
+        transition: 0.2s;
+        background-repeat: no-repeat;
+        filter: brightness(70%);
+      }
+      .birddex_entry_bird:hover {
+        filter: brightness(110%);
+        border-color: white;
+      }
+      .birddex_entry_bird center{
+        background-color: black;
+        width: max-content;
+        border-radius: 0px 4px 4px 0px;
+        padding: 2px;
+      }
