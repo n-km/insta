@@ -324,9 +324,13 @@ body {
         text-shadow: 2px 1px rgb(0, 0, 0);
         transition: 0.2s;
         background-repeat: no-repeat;
-        filter: brightness(70%);
+        filter: brightness(100%);
       }
-      .birddex_entry_bird:hover, .birddex_entry_bird:active {
+      .birddex_entry_bird:hover {
+        filter: brightness(110%);
+        border-color: white;
+      }
+      .birddex_entry_bird:focus {
         filter: brightness(110%);
         border-color: white;
       }
