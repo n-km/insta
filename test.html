@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildvorschau mit Navigation</title>
+    <style>
+        /* Basis Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        details {
+            margin-bottom: 20px;
+        }
+
+        .available-pictures img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+        }
+
+        .modal-content {
+            margin-top: 5%;
+            max-width: 90%;
+            max-height: 80%;
+            transition: transform 0.2s;
+        }
+
+        .close, .prev, .next {
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .close {
+            top: 15px;
+            right: 35px;
+        }
+
+        .prev {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Zoom-Effekt */
+        .modal-content:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bildgalerie</h1>
+
+    <details>
+        <summary>Galerie 1</summary>
+        <div class="available-pictures">
+            <a href="#"><img src="https://via.placeholder.com/300x200?text=Bild+1" alt="Bild 1"></a>
+            <a href="#"><img src="https://via.placeholder.com/300x200?text=Bild+2" alt="Bild 2"></a>
+            <a href="#"><img src="https://via.placeholder.com/300x200?text=Bild+3" alt="Bild 3"></a>
+        </div>
+    </details>
+
+    <details>
+        <summary>Galerie 2</summary>
+        <div class="available-pictures">
+            <a href="#"><img src="https://via.placeholder.com/300x200?text=Bild+4" alt="Bild 4"></a>
+            <a href="#"><img src="https://via.placeholder.com/300x200?text=Bild+5" alt="Bild 5"></a>
+        </div>
+    </details>
+
+    <!-- Modal für Bildvorschau -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <img class="modal-content" id="previewImage">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        let currentImages = [];
+
+        function openModal(imageElement) {
+            // Finde alle Bilder in der aktuellen Summary-Gruppe
+            const summary = imageElement.closest("details");
+            currentImages = Array.from(summary.querySelectorAll(".available-pictures a img"));
+            currentImageIndex = currentImages.indexOf(imageElement);
+
+            updateModalImage();
+            document.getElementById("imageModal").style.display = "block";
+        }
+
+        function updateModalImage() {
+            if (currentImages.length > 0) {
+                document.getElementById("previewImage").src = currentImages[currentImageIndex].src;
+            }
+        }
+
+        function changeImage(step) {
+            currentImageIndex = (currentImageIndex + step + currentImages.length) % currentImages.length;
+            updateModalImage();
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeModal();
+            if (event.key === "ArrowLeft") changeImage(-1);
+            if (event.key === "ArrowRight") changeImage(1);
+        });
+
+        // Event Listener zu allen Bildern hinzufügen
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".available-pictures a img").forEach(img => {
+                img.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    openModal(img);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

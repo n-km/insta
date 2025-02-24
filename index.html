@@ -7,11 +7,14 @@
     <meta name="description" content="Pictures">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
+    <script src="modal.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -68,10 +71,10 @@
 <body>
     <div class="content">
         <br><br><br>
-        <h1>Instagram</h1>
+        <h1>Mein Portfolio.</h1>
     </div>
-    <b>Mein Portfolio.</b>
-    <br>
+    
+    
     <i>Viel Spaß beim Ansehen der Bilder 😀</i>
     <br>
     
@@ -195,6 +198,12 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
+    </div>
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <img class="modal-content" id="previewImage">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
     </div>
 
     <div class="birddex_open">
